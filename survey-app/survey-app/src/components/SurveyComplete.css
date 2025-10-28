@@ -1,0 +1,229 @@
+.complete-container {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+/* background: linear-gradient(to bottom right, rgba(9, 10, 30, 0.2), rgba(6, 3, 14, 0.2), rgba(2, 1, 15, 0.2)); */
+background:linear-gradient(135deg,rgba(30,30,60,0.9),rgba(80,20,100,0.8),rgba(0,0,0,0.7))
+}
+
+.complete-background-gradient {
+  position: absolute;
+  inset: 0;
+  opacity: 0.3;
+}
+
+.complete-background-inner {
+  position: absolute;
+  inset: 0;
+background: linear-gradient(to bottom right, rgba(255, 87, 87, 0.2), rgba(139, 92, 246, 0.2), rgba(13, 115, 119, 0.2));
+  background-size: 200% 200%;
+  animation: gradient 8s ease infinite;
+}
+
+.complete-content {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.complete-card {
+  max-width: 672px;
+  width: 100%;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 48px;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(139, 92, 246, 0.4),
+              inset 0 0 60px rgba(255, 255, 255, 0.05);
+  animation: scaleIn 0.6s ease;
+}
+
+.complete-inner {
+  text-align: center;
+}
+
+.complete-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+  color:rgb(162, 146, 149)
+}
+
+.complete-icon-circle {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 2s ease infinite;
+}
+
+.complete-icon {
+  width: 48px;
+  height: 48px;
+}
+
+.complete-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 16px;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.complete-divider {
+  height: 4px;
+  width: 128px;
+  margin: 0 auto;
+  border-radius: 9999px;
+}
+
+.complete-description {
+  font-size: 1.25rem;
+  color: #d1d5db;
+  line-height: 1.6;
+  margin-top: 24px;
+  margin-bottom: 32px;
+}
+
+.complete-traits {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.complete-trait {
+  padding: 12px 24px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.complete-trait:hover {
+  transform: scale(1.05);
+}
+
+.complete-trait:nth-child(1) {
+  animation: fadeIn 0.5s ease 0s both;
+}
+
+.complete-trait:nth-child(2) {
+  animation: fadeIn 0.5s ease 0.1s both;
+}
+
+.complete-trait:nth-child(3) {
+  animation: fadeIn 0.5s ease 0.2s both;
+}
+
+.complete-trait:nth-child(4) {
+  animation: fadeIn 0.5s ease 0.3s both;
+}
+
+.complete-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 48px;
+}
+
+.complete-button {
+  padding: 20px 32px;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 1.125rem;
+  transition: all 0.3s ease;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.complete-button.retake {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.complete-button.retake:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+/* .complete-button.share {
+  Background gradient will be set inline based on result color 
+} */
+
+.complete-button.share:hover {
+  transform: scale(1.05);
+}
+
+.complete-button-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.confetti-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+}
+
+.confetti-particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: confetti 2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(10px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@media (max-width: 768px) {
+  .complete-card {
+    padding: 32px;
+  }
+  
+  .complete-title {
+    font-size: 2.25rem;
+  }
+  
+  .complete-description {
+    font-size: 1.125rem;
+  }
+  
+  .complete-actions {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 640px) {
+  .complete-actions {
+    flex-direction: row;
+  }
+}
